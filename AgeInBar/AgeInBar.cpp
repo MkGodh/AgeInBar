@@ -14,11 +14,17 @@ int main()
     std::cout << "Добро пожаловать в бар Синяя борода!\n";
     std::cout << "Введите сегодняшний день, месяц и год: "; std::cin >> currentDay >> currentMonth >> currentYear;
     std::cout << "Введите ваш день, месяц и год рождения: "; std::cin >> day >> month >> year;
-    if (currentYear - year >= 18 && month <= currentMonth && currentDay - day >= 1) {
-        std::cout << "Зачем тебе пиво? Выпей лучше Текиллу!";
+    if (currentYear - year < 18) {
+        std::cout << "Бухалка не выросла!";
     }
-    else {
-        std::cout << "Бухалка не выросла! Пей сок браток!";
+    else if (currentYear - year > 18) {
+        std::cout << "Можно";
+    }
+    else if (currentMonth > month || (currentMonth == month && currentDay > day)) {
+        std::cout << "Можно";
+    }
+    else
+    {
+        std::cout << "Бухалка не выросла!";
     }
 }
-
